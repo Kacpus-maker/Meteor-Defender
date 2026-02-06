@@ -1,0 +1,144 @@
+html, body {
+  margin: 0;
+  height: 100%;
+  background: #0b1020;
+  color: #e8ecff;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+}
+
+.wrap {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+}
+
+/* Groß im Browser: nutzt fast das ganze Fenster */
+canvas {
+  width: min(1600px, 99vw);
+  height: auto;
+
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 16px;
+  box-shadow: 0 14px 70px rgba(0,0,0,0.48);
+}
+
+/* HUD */
+.hud{
+  position: fixed;
+  top: 12px; left: 12px; right: 12px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.pill{
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(8px);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.help { opacity: 0.9; }
+.kbd {
+  padding: 2px 6px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.14);
+}
+
+/* Power icons */
+.powerBar { display:flex; gap:10px; align-items:center; }
+.powerItem{
+  display:flex; align-items:center; gap:8px;
+  opacity: .45;
+  filter: grayscale(1);
+  transition: opacity .15s ease, filter .15s ease;
+}
+.powerItem.active{
+  opacity: 1;
+  filter: grayscale(0);
+}
+.pIcon{
+  width: 22px; height: 22px;
+  display:inline-flex; align-items:center; justify-content:center;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.14);
+  font-weight: 800;
+}
+.pTxt{
+  font-variant-numeric: tabular-nums;
+  opacity:.95;
+  min-width: 38px;
+}
+
+/* MENU */
+.menu{
+  position: fixed;
+  inset: 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: rgba(0,0,0,0.55);
+  z-index: 20;
+}
+.menu.hidden{ display:none; }
+
+.menuCard{
+  width: min(720px, 92vw);
+  border-radius: 18px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.14);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 18px 90px rgba(0,0,0,0.55);
+  padding: 22px 22px 18px;
+}
+
+.menuCard h1{ margin:0 0 6px; font-size: 34px; }
+.sub{ margin:0 0 18px; opacity:.85; }
+
+.section{ margin-top: 14px; }
+.section h2{ margin:0 0 10px; font-size: 16px; opacity:.92; }
+.section.small{ margin-top: 10px; }
+.hint{ opacity:.85; line-height: 1.4; }
+
+.row{ display:flex; gap:10px; flex-wrap: wrap; }
+
+.chip{
+  pointer-events: auto;
+  cursor: pointer;
+  border-radius: 999px;
+  padding: 10px 14px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.14);
+  color: #e8ecff;
+  font-weight: 650;
+}
+.chip:hover{ background: rgba(255,255,255,0.11); }
+.chip.selected{
+  background: rgba(169,255,251,0.18);
+  border-color: rgba(169,255,251,0.35);
+}
+
+.startBtn{
+  pointer-events: auto;
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  padding: 14px 16px;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 800;
+  color: #071018;
+  background: linear-gradient(90deg, rgba(169,255,251,0.95), rgba(180,139,255,0.95));
+}
+.startBtn:hover{ filter: brightness(1.05); }

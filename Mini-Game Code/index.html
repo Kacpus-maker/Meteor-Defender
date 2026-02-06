@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <title>Meteor Defender</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- MENU OVERLAY -->
+  <div class="menu" id="menu">
+    <div class="menuCard">
+      <h1>Meteor Defender</h1>
+      <p class="sub">Wähle Schwierigkeit & Charakter, dann starten.</p>
+
+      <div class="section">
+        <h2>Schwierigkeit</h2>
+        <div class="row" id="difficultyRow">
+          <button class="chip selected" data-diff="easy">Easy</button>
+          <button class="chip" data-diff="medium">Medium</button>
+          <button class="chip" data-diff="hard">Hard</button>
+          <button class="chip" data-diff="hardcore">Hardcore</button>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Charakter</h2>
+        <div class="row" id="characterRow">
+          <button class="chip selected" data-char="classic">Classic</button>
+          <button class="chip" data-char="sniper">Sniper</button>
+          <button class="chip" data-char="tank">Tank</button>
+          <button class="chip" data-char="neon">Neon</button>
+        </div>
+      </div>
+
+      <div class="section small">
+        <div class="hint">
+          Steuerung: <b>A/D</b> oder <b>←/→</b> · <b>SPACE</b> schießen · <b>P</b> Pause · <b>R</b> Neustart · <b>M</b> Menü
+        </div>
+      </div>
+
+      <div class="section">
+        <button class="startBtn" id="startBtn">Start</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- HUD -->
+  <div class="hud">
+    <div class="pill" id="stats">Score: 0 · Level: 1 · HP</div>
+
+    <div class="pill powerBar">
+      <div class="powerItem" id="icon-rapid" title="Rapid Fire">
+        <span class="pIcon">⚡</span><span class="pTxt" id="t-rapid">—</span>
+      </div>
+      <div class="powerItem" id="icon-triple" title="Triple Shot">
+        <span class="pIcon">≋</span><span class="pTxt" id="t-triple">—</span>
+      </div>
+      <div class="powerItem" id="icon-shield" title="Shield">
+        <span class="pIcon">🛡</span><span class="pTxt" id="t-shield">—</span>
+      </div>
+      <div class="powerItem" id="icon-slow" title="Slow Time">
+        <span class="pIcon">⏳</span><span class="pTxt" id="t-slow">—</span>
+      </div>
+    </div>
+
+    <div class="pill help">
+      A/D oder ←/→ · SPACE schiessen · P Pause · R Neustart · <span class="kbd">M</span> Menü
+    </div>
+  </div>
+
+  <div class="wrap">
+    <!-- groß & scharf -->
+    <canvas id="game" width="1600" height="900"></canvas>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
